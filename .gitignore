@@ -1,0 +1,9 @@
+.DS_Store
+*.o
+*.a
+*.so
+*.exe
+*.test
+*.prof
+*.out
+vendor/
