@@ -7,6 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/kingwerd/fullstack-go-app/api/models"
 )
 
@@ -21,10 +22,10 @@ func (server *Server) Intialize(Dbdriver, DbUser, DbPassword, DbPort, DbHost, Db
 		DBURL := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=diable password=%s", DbHost, DbPort, DbUser, DbName, DbPassword)
 		server.DB, err = gorm.Open(Dbdriver, DBURL)
 		if err != nil {
-			fmt.Printf("Cannot connect to %s database", Dbdriver)
-			log.Fatal("This is the error:", err)
+			fmt.Printf("Cannot connect to %s database\n", Dbdriver)
+			log.Fatal("This is the error: \n\t", err)
 		} else {
-			fmt.Printf("We are connected to the %s database", Dbdriver)
+			fmt.Printf("We are connected to the %s database.", Dbdriver)
 		}
 	}
 	server.DB.Debug().AutoMigrate(&models.User{}, &models.Post{})

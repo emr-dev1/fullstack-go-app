@@ -8,7 +8,7 @@ import (
 	"github.com/kingwerd/fullstack-go-app/api/auth"
 	"github.com/kingwerd/fullstack-go-app/api/models"
 	"github.com/kingwerd/fullstack-go-app/api/responses"
-	"github.com/kingwerd/fullstack-go-app/utils/formaterror"
+	"github.com/kingwerd/fullstack-go-app/api/utils/formaterror"
 	"golang.org/x/crypto/bcrypt"
 )
 
