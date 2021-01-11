@@ -12,6 +12,8 @@ import (
 
 var server = controllers.Server{}
 
+// Run loads environment variables, performs server & database initialization,
+// and then runs the server.
 func Run() {
 	var err error
 	err = godotenv.Load()

@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+// FormatError will take an error in string form and returns a formatted error
+// based on the content of the error string.
 func FormatError(err string) error {
 	if strings.Contains(err, "Nickname") {
 		return errors.New("Nickname Already Taken")

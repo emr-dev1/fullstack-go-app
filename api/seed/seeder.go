@@ -31,6 +31,7 @@ var posts = []models.Post{
 	},
 }
 
+// Load performs data seeding at the start of the application.
 func Load(db *gorm.DB) {
 	err := db.Debug().DropTableIfExists(&models.Post{}, &models.User{}).Error
 	if err != nil {
