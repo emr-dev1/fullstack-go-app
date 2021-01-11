@@ -1,9 +1,11 @@
 FROM golang:alpine as builder
 
+# ENV GO111MODULE=on
+
 # Installing git for fetching dependencies
 RUN apk update && apk add --no-cache git
 
-RUN mkdir /app
+WORKDIR /app
 
 # Copy the go mod and sum files
 COPY go.mod go.sum ./
